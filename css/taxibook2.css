@@ -1,0 +1,227 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  background-color: #2ecc71;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 1rem;
+  margin: 0 auto;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: #1b9b54;
+}
+
+.container {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.required {
+  color: red;
+}
+
+input,
+select {
+  display: block;
+  width: calc(100% - 40px); /* Ajuste para levar em conta o espaço dos botões */
+  padding: 0.5rem;
+}
+
+.input-container {
+  margin-top: 20px;
+  position: relative;
+  height: 48px;
+  width: 100%;
+}
+
+.numeric-input {
+  position: relative;
+  display: inline-block;
+}
+
+.numeric-input input[type="number"]::-webkit-inner-spin-button,
+.numeric-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numeric-input input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: calc(100% - 40px); /* Ajuste para levar em conta o espaço dos botões */
+  text-align: center;
+}
+
+.arrow-buttons {
+  position: absolute;
+  top: 50%; /* Alinhar verticalmente ao centro */
+  right: 0;
+  transform: translateY(-50%); /* Alinhar verticalmente ao centro */
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow-buttons button {
+  width: 20px; /* ajuste conforme necessário */
+  height: 20px; /* ajuste conforme necessário */
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px; /* ajuste conforme necessário */
+}
+
+
+button:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 0.1rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.parallel-questions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.parallel-question {
+  width: 48%; /* Ajuste conforme necessário para o espaçamento */
+}
+.question {
+  margin-bottom: 45px; /* Ajuste conforme necessário para o espaçamento desejado */
+}
+.input-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Adicionado para alinhar verticalmente os botões */
+}
+
+.backward-button {
+  background-color: #ea1010;
+  color: #fff;
+  padding: 13px;
+  border: 0;
+  border-radius: 4px;
+  width: calc(40% - 5px); /* Dividir o espaço igualmente entre os botões */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backward-button:hover{
+  background-color: #c71111;
+}
+
+.backward-button:focus
+{
+  outline: 0;
+}
+
+.backward-button:active{
+  background-color: #c71111;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.foward-button {
+  color: #fff;
+  padding: 13px;
+  border: 0;
+  border-radius: 4px;
+  width: calc(50% - 5px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}

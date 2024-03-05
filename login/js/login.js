@@ -1,8 +1,9 @@
 $(document).ready(function () {
     "use strict";
     $("#submit").click(function () {
-
+        
         var username = $("#myusername").val(), password = $("#mypassword").val();
+        e
 
         if ((username === "") || (password === "")) {
             $("#message").html("<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Please enter a username and a password</div>");
@@ -15,7 +16,7 @@ $(document).ready(function () {
                 success: function (html) {
                     console.log(html.response + ' ' + html.username);
                     if (html.response === 'true') {
-                        location.assign("../index.php");
+                        location.assign("./index.php");
                         location.reload();
                         return html.username;
                     } else {

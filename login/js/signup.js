@@ -17,21 +17,20 @@ $(document).ready(function(){
         data: "newuser="+username+"&password1="+password+"&password2="+password2+"&email="+email,
         success: function(html){
 
-			var text = $(html).text();
-			//Pulls hidden div that includes "true" in the success response
-			var response = text.substr(text.length - 4);
+          var text = $(html).text();
+          //Pulls hidden div that includes "true" in the success response
+          var response = text.substr(text.length - 4);
 
           if(response == "true"){
 
-			$("#message").html(html);
+            $("#message").html(html);
 
-					$('#submit').hide();
-			}
-      
-		else {
-			$("#message").html(html);
-			$('#submit').show();
-			}
+            $('#submit').hide();
+          }
+          else {
+            $("#message").html(html);
+            $('#submit').show();
+          }
         },
         beforeSend: function()
         {

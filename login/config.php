@@ -39,7 +39,7 @@ $smtp_security = 'ssl';//ssl, tls or ''
 $verifymsg = 'Carregue no link para verificar a sua conta.'; //Verify email message
 $active_email = 'A sua conta foi verificada com sucesso! Carregue aqui para dar login!';//Active email message
 //LOGIN FORM RESPONSE MESSAGES/ERRORS
-$signupthanks = 'Obrigado por efetuar o registo! Dentro de momentos vai receber um email para confir a sua conta.';
+$signupthanks = 'Obrigado por efetuar o registo! Dentro de momentos vai receber um email para confirmar a sua conta.';
 $activemsg = 'A sua conta foi confirmada! Pode fazer login em <br><a href="'.$signin_url.'">'.$signin_url.'</a>';
 
 //DO NOT TOUCH BELOW THIS LINE

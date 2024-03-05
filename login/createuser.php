@@ -1,5 +1,6 @@
 <?php
 
+echo 'testewewewe';
 
 require 'includes/functions.php';
 include_once 'config.php';
@@ -46,7 +47,7 @@ if ($pw1 != $pw2) {
 
         //Success
         if ($response == 'true') {
-
+            
             echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'. $signupthanks .'</div><div id="returnVal" style="display:none;">true</div>';
 
             //Send verification email

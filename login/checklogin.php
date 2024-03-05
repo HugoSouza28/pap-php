@@ -3,7 +3,7 @@
 //'true' triggers login success
 ob_start();
 include 'config.php';
-require 'includes/functions.php';
+require './includes/functions.php';
 
 // Define $myusername and $mypassword
 $username = $_POST['myusername'];

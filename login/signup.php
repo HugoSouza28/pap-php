@@ -1,12 +1,3 @@
-<?php
-  session_start();
-
-  if (isset($_SESSION['username'])) {
-      session_destroy();
-  }
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,75 +9,70 @@
     <link href="../css/registo.css" rel="stylesheet" media="screen">
   </head>
   <header>
-        <div class="container2">
-          <div class="logo">
-          <img src="images/taxi-icon.png" alt="Taxi Icon">
-            <h1><b>TaxiRide</b></h1>
-          </div>
-          <nav>
-            <a href="/pap/php-login-master/login/index.php">Inicio</a>
-            <a href="#">Sobre Nós</a>
-            <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
-            <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-            <a href="/pap/php-login-master/login/signup.php">Registar</a>
-          </nav>
-        </div>
-    </header>
+    <div class="container2">
+      <div class="logo">
+        <img src="images/taxi-icon.png" alt="Taxi Icon">
+        <h1><b>TaxiRide</b></h1>
+      </div>
+      <nav>
+        <a href="/pap/php-login-master/login/index.php">Inicio</a>
+        <a href="#">Sobre Nós</a>
+        <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
+        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
+        <a href="/pap/php-login-master/login/signup.php">Registar</a>
+      </nav>
+    </div>
+  </header>
 
   <body>
     <div class="container">
-    <h2 class="form-signup-heading"><b>Registar</b></h2>
+      <h2 class="form-signup-heading"><b>Registar</b></h2>
       <form class="form-signup" id="usersignup" name="usersignup" method="post" action="createuser.php">
-      <div class="input-container2">
-        <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
-      </div>
-      <div class="input-container2">
-        <input name="email" id="email" type="text" class="form-control" placeholder="Email">
-      </div>
-      <div class="input-container2">
-        <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
-      </div>
-      <div class="input-container2">
-        <input name="password2" id="password2" type="password" class="form-control" placeholder="Confirmar Password">
-      </div>
-      <div class="input-container2">
-        <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Registar</button>
-      </div>
+        <div class="input-container2">
+          <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
+        </div>
+        <div class="input-container2">
+          <input name="email" id="email" type="text" class="form-control" placeholder="Email">
+        </div>
+        <div class="input-container2">
+          <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="input-container2">
+          <input name="password2" id="password2" type="password" class="form-control" placeholder="Confirmar Password">
+        </div>
+        <div class="input-container2">
+          <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Registar</button>
+        </div>
         <div class="input-container2">
                 <p>Já tem conta? <a href="/pap/php-login-master/login/main_login.php">Login</a></p>
         </div>
+        <div class="input-container2" id="message"></div>
       </form>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    </div>
+    
     <script src="//code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/bootstrap.js"></script>
-
     <script src="js/signup.js"></script>
-
-
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
-$( "#usersignup" ).validate({
-  rules: {
-	email: {
-		email: true,
-		required: true
-	},
-    password1: {
-      required: true,
-      minlength: 4
-	},
-    password2: {
-      equalTo: "#password1"
-    }
-  }
-});
-</script>
-<footer>
-        <p>Copyright © 2024 TaxiRide</p>
-    </footer>
+    <script>
+      $( "#usersignup" ).validate({
+        rules: {
+	      email: {
+		    email: true,
+		    required: true
+	      },
+        password1: {
+        required: true,
+        minlength: 6
+	      },
+        password2: {
+        equalTo: "#password1"
+        }
+      }
+    });
+    </script>
+
   </body>
 </html>

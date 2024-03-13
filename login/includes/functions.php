@@ -18,7 +18,7 @@ spl_autoload_register(function ($className) {
 
 function checkAttempts($username)
 {
-
+   
     try {
 
         $db = new DbConn;
@@ -34,6 +34,7 @@ function checkAttempts($username)
         $stmt->bindParam(':username', $username);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+       
         return $result;
 
         $oldTime = strtotime($result['lastlogin']);

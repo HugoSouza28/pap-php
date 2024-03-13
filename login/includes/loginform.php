@@ -38,7 +38,7 @@ class LoginForm extends DbConn
         if ($curr_attempts >= $max_attempts && $timeDiff < $login_timeout) {
 
             //Too many failed attempts
-            $success = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Maximum number of login attempts exceeded... please wait ".$timeout_minutes." minutes before logging in again</div>";
+            $success = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Excedeu o limite de tentativas, por favor aguarde ".$timeout_minutes." minutos antes de efetuar o login novamente</div>";
 
         } else {
 
@@ -116,12 +116,15 @@ class LoginForm extends DbConn
 
             $att = new LoginForm;
             $attcheck = checkAttempts($username);
-            $curr_attempts = $attcheck['attempts'];
-
-            $datetimeNow = date("Y-m-d H:i:s");
-            $oldTime = strtotime($attcheck['lastlogin']);
-            $newTime = strtotime($datetimeNow);
-            $timeDiff = $newTime - $oldTime;
+           
+            if( is_array($attcheck) ) {
+                $curr_attempts = $attcheck['attempts'];
+                $oldTime = strtotime($attcheck['lastlogin']);
+                $datetimeNow = date("Y-m-d H:i:s");
+                $newTime = strtotime($datetimeNow);
+                $timeDiff = $newTime - $oldTime;
+            }
+            
 
             $err = '';
             $sql = '';

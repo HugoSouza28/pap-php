@@ -1,4 +1,7 @@
 <?php
+
+
+
 //DO NOT ECHO ANYTHING ON THIS PAGE OTHER THAN RESPONSE
 //'true' triggers login success
 ob_start();
@@ -19,15 +22,14 @@ $conf = new GlobalConf;
 $lastAttempt = checkAttempts($username);
 $max_attempts = $conf->max_attempts;
 
-
 //First Attempt
-if ($lastAttempt['lastlogin'] == '') {
+if ($lastAttempt['lastlogin'] ?? 'default value' == '' ?? 'default value') {
 
     $lastlogin = 'never';
     $loginCtl->insertAttempt($username);
     $response = $loginCtl->checkLogin($username, $password);
 
-} elseif ($lastAttempt['attempts'] >= $max_attempts) {
+} elseif ($lastAttempt['attempts'] ?? 'default value' >= $max_attempts ?? 'default value') {
 
     //Exceeded max attempts
     $loginCtl->updateAttempts($username);

@@ -1,6 +1,6 @@
 <?php
 
-echo 'testewewewe';
+echo "teste";
 
 require 'includes/functions.php';
 include_once 'config.php';
@@ -25,15 +25,19 @@ if (isset($admin_email)) {
 //Validation rules
 if ($pw1 != $pw2) {
 
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password fields must match</div><div id="returnVal" style="display:none;">false</div>';
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>As passwords tem de ser iguais.</div><div id="returnVal" style="display:none;">false</div>';
 
-} elseif (strlen($pw1) < 4) {
+} elseif (strlen($newuser) < 4) {
 
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password must be at least 4 characters</div><div id="returnVal" style="display:none;">false</div>';
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>O username tem de ter no mínimo 6 caracteres.</div><div id="returnVal" style="display:none;">false</div>';
+
+} elseif (strlen($pw1) < 6) {
+
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>A password tem de ter no mínimo 6 caracteres.</div><div id="returnVal" style="display:none;">false</div>';
 
 } elseif (!filter_var($newemail, FILTER_VALIDATE_EMAIL) == true) {
 
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Must provide a valid email address</div><div id="returnVal" style="display:none;">false</div>';
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>O email tem de ser válido.</div><div id="returnVal" style="display:none;">false</div>';
 
 } else {
     //Validation passed
@@ -61,6 +65,6 @@ if ($pw1 != $pw2) {
         }
     } else {
         //Validation error from empty form variables
-        echo 'An error occurred on the form... try again';
+        echo 'Ocorreu um erro... tenta novamente.';
     }
 };

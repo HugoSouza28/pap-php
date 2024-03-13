@@ -1,26 +1,16 @@
-<?php
-  session_start();
-
-  if (isset($_SESSION['username'])) {
-      session_start();
-      session_destroy();
-  }
-
-
-?>
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>TaxiRide</title>
-  <link href="../css/homepage.css" rel="stylesheet" media="screen">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Registo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/homepage.css" rel="stylesheet" media="screen">
+  </head>
   <header>
-    <div class="container">
+    <div class="container2">
       <div class="logo">
-        <img src="taxi-icon.png" alt="Taxi Icon">
-        <h1>TaxiRide</h1>
+        <img src="images/taxi-icon.png" alt="Taxi Icon">
+        <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
         <a href="/pap/php-login-master/login/index.php">Inicio</a>
@@ -31,6 +21,7 @@
       </nav>
     </div>
   </header>
+
   <main>
     <div class="container">
       <div class="welcome">

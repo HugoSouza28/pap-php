@@ -1,12 +1,14 @@
 $(document).ready(function () {
     "use strict";
     $("#submit").click(function () {
+
+        $("#message").html("aqui");
         
         var username = $("#myusername").val(), password = $("#mypassword").val();
         e
 
         if ((username === "") || (password === "")) {
-            $("#message").html("<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Please enter a username and a password</div>");
+            $("#message").html("<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Preenche todos os campos</div>");
         } else {
             $.ajax({
                 type: "POST",

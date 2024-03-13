@@ -35,26 +35,23 @@ if (isset($_SESSION['username'])) {
       <h2 class="form-signin-heading"><b>Entrar</b></h2>
       <form class="form-signin" name="form1" method="post" action="checklogin.php">
         <div class="input-container2">
-        <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-      </div>
-      <div class="input-container2">
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
-      </div>
-      <div class="input-container2">
-        <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      </div>
-        <div class="input-container2">
-                <p>Ainda não tem conta? <a href="/pap/php-login-master/login/signup.php">Registar</a></p>
+          <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
         </div>
-        <div id="message"></div>
+        <div class="input-container2">
+          <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="input-container2">
+          <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        </div>
+        <div class="input-container2">
+          <p>Ainda não tem conta? <a href="/pap/php-login-master/login/signup.php">Registar</a></p>
+        </div>
+        <div class="input-container2" id="message"></div>
       </form>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.4.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <!-- The AJAX login script -->
     <script src="js/login.js"></script>
     <footer>
         <p>Copyright © 2024 TaxiRide</p>

@@ -16,7 +16,7 @@
   <header>
     <div class="container">
       <div class="logo">
-        <img src="taxi-icon.png" alt="Taxi Icon">
+        <img src="images/taxi-icon.png" alt="Taxi Icon">
         <h1>TaxiRide</h1>
       </div>
       <nav>

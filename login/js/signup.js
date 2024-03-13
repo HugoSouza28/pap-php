@@ -7,9 +7,8 @@ $(document).ready(function(){
     var password2 = $("#password2").val();
     var email = $("#email").val();
 
-    if((username == "") || (password == "") || (email == "")) {
-      $("#message").html("<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Please enter a username and a password</div>");
-    }
+    if((username == "") || (password == "") || (password2 == "") || (email == "")) {
+      $("#message").html("<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>Preenche todos os campos.</div>");    }
     else {
       $.ajax({
         type: "POST",
@@ -24,7 +23,6 @@ $(document).ready(function(){
           if(response == "true"){
 
             $("#message").html(html);
-
             $('#submit').hide();
           }
           else {

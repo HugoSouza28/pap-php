@@ -1,8 +1,6 @@
 <?php
-if(isset($_SESSION['username'])){
-  header("location: inicio.php");
-  }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,10 +16,9 @@ if(isset($_SESSION['username'])){
         <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
+        <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
+        <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
       </nav>
     </div>
   </header>

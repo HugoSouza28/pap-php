@@ -2,8 +2,6 @@ $(document).ready(function () {
     "use strict";
     $("#submit").click(function () {
 
-        $("#message").html("aqui");
-        
         var username = $("#myusername").val(), password = $("#mypassword").val();
         e
 

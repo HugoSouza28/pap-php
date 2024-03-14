@@ -1,11 +1,3 @@
-<?php
-  session_start();
-
-  if (isset($_SESSION['username'])) {
-      session_destroy();
-  }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +14,9 @@
         <h1>TaxiRide</h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
+        <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
       </nav>
     </div>
   </header>

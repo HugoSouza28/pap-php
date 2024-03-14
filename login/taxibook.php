@@ -1,46 +1,76 @@
 <?php
-  session_start();
+session_start();
+$bdlocalhost='localhost';
+$bdusername='root';
+$bdpassword='';
+$bdbasedados='paphugo';
 
-  if (isset($_SESSION['username'])) {
-      session_destroy();
-  }
+$conn = mysqli_connect($bdlocalhost, $bdusername, $bdpassword, $bdbasedados);
+$erro="";
+if (isset($_POST['submit'])) {
+  $idreserva = uniqid(rand(), false);
+  $data = $_POST['datetimepicker'];
+  if ($data != "") {
+    $data .= ":00";
+    $sql = "INSERT INTO reserva (id, dataehora, members_id) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $idreserva, $data, $_SESSION['id']);
+    $stmt->execute();
+    $_SESSION['idreserva'] = $idreserva;
+    header("location: taxibook2.php");
+  } else {
+      $erro="1";
+    }
+}
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>TaxiRide</title>
-  <link href="../css/taxibook.css" rel="stylesheet" media="screen">
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="../css/main.css" rel="stylesheet" media="screen">
+  <link href="../css/registo.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container2">
       <div class="logo">
         <img src="images/taxi-icon.png" alt="Taxi Icon">
         <h1>TaxiRide</h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
+        <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
       </nav>
     </div>
   </header>
 
   <div class="container">
-      <!-- Container centralizado -->
-      <div id="content" style="text-align: center;">
+    <form class="form-signin" method="post" action = "">
+      <div class="input-container2">
         <h2>Selecione a data e hora:</h2>
-        <!-- Campo de entrada para selecionar a data e hora -->
-        <input type="text" id="datetimepicker" name="datetimepicker" placeholder="Clique para selecionar a data e hora">
+      </div>
+      <div class="input-container2">
+      </div>
+      <div class="input-container2">
+        <input type="text" id="datetimepicker" name="datetimepicker" placeholder="Clique para selecionar a data e hora" required>
+      </div>
+      <div class="input-container2">
+        <button name="submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Avançar</button>
       </div>
       <div class="input-container">
-        <a href="/pap/php-login-master/login/taxibook2.php"><button type="button">Avançar</button></a>
-      </div>
+        <?php 
+				  if ($erro =="1")  {
+					  echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Selecione uma data.</div><div id="returnVal" style="display:none;">false</div>';
+			    } elseif ($erro=="2")  {
+					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Ocorreu um erro a selecionar a data, selecione novamente.</div><div id="returnVal" style="display:none;">false</div>';
+			    }
+			  ?>
+        </div>
+    </form>
   </div>
 
   <!-- Adicione os arquivos JavaScript necessários para o flatpickr -->

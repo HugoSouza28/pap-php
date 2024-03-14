@@ -1,9 +1,6 @@
 <?php
-  session_start();
+session_start();
 
-  if (isset($_SESSION['username'])) {
-      session_destroy();
-  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,16 +17,15 @@
         <h1>TaxiRide</h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
+        <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
       </nav>
     </div>
   </header>
 
   <div class="container" id="passengerInfoContainer">
+  <form class="form-signin" method="post" action = "">
   <h2>Informações do passageiro</h2>
   <div class="question">
     <div class="parallel-questions">
@@ -78,11 +74,12 @@
     </div>
   </div>
   <div class="input-container">
-  <a href="/pap/php-login-master/login/taxibook.php" class="backward-button">Retroceder</a>
-</div>
-  <div class="input-container">
-  <a href="/pap/php-login-master/login/taxibook3.php"><button type="submit" class="foward-button">Avançar</button>
+    <a href="/pap/php-login-master/login/taxibook.php" class="backward-button">Retroceder</a>
   </div>
+  <div class="input-container">
+    <button name="submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Avançar</button>
+  </div>
+</form>
 </div>
 
 <script>

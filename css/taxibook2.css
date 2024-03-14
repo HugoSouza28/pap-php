@@ -225,3 +225,27 @@ footer p {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
+.btn2 {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn2:hover {
+  background-color: #3e8e41;
+}
+
+.btn2:focus {
+  outline: 0;
+}
+
+.btn2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

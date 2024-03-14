@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION['username'])){
+  header("location: inicio.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +23,6 @@
       <nav>
         <a href="/pap/php-login-master/login/index.php">Inicio</a>
         <a href="#">Sobre Nós</a>
-        <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
         <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
         <a href="/pap/php-login-master/login/signup.php">Registar</a>
       </nav>
@@ -29,16 +34,16 @@
       <h2 class="form-signup-heading"><b>Registar</b></h2>
       <form class="form-signup" id="usersignup" name="usersignup" method="post" action="createuser.php">
         <div class="input-container2">
-          <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
+          <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" required autofocus>
         </div>
         <div class="input-container2">
-          <input name="email" id="email" type="text" class="form-control" placeholder="Email">
+          <input name="email" id="email" type="text" class="form-control" placeholder="Email" required>
         </div>
         <div class="input-container2">
-          <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
+          <input name="password1" id="password1" type="password" class="form-control" placeholder="Password" required>
         </div>
         <div class="input-container2">
-          <input name="password2" id="password2" type="password" class="form-control" placeholder="Confirmar Password">
+          <input name="password2" id="password2" type="password" class="form-control" placeholder="Confirmar Password" required>
         </div>
         <div class="input-container2">
           <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Registar</button>

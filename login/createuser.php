@@ -1,9 +1,8 @@
 <?php
 
-echo "teste";
-
 require 'includes/functions.php';
 include_once 'config.php';
+include('dbinfo.php');
 
 //Pull username, generate new ID and hash password
 $newid = uniqid(rand(), false);
@@ -22,8 +21,22 @@ if (isset($admin_email)) {
     $newemail = $_POST['email'];
 
 }
+
+$dbemails = QueryDB("select * from members where email='$newemail'");
+$dbusernames = QueryDB("select * from members where username='$newuser'");
+$nr_linhasemail = mysqli_num_rows($dbemails);
+$nr_linhasuser = mysqli_num_rows($dbusernames);
+
 //Validation rules
-if ($pw1 != $pw2) {
+if ($nr_linhasuser > 0) {
+
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Esse username já está a ser utilizado.</div><div id="returnVal" style="display:none;">false</div>';
+
+} elseif ($nr_linhasemail > 0) {
+
+    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Esse email já está a ser utilizado.</div><div id="returnVal" style="display:none;">false</div>';
+
+} elseif ($pw1 != $pw2) {
 
     echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>As passwords tem de ser iguais.</div><div id="returnVal" style="display:none;">false</div>';
 

@@ -90,7 +90,7 @@ label {
 input,
 select {
   display: block;
-  width: calc(100% - 40px); /* Ajuste para levar em conta o espaço dos botões */
+  width: calc(100% - 40px);
   padding: 0.5rem;
 }
 
@@ -106,12 +106,15 @@ select {
   display: inline-block;
 }
 
+.numeric-input {
+  position: relative;
+  display: inline-block;
+}
+
 .numeric-input input[type="number"]::-webkit-inner-spin-button,
 .numeric-input input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
+  margin: 0;
 }
 
 .numeric-input input[type="number"] {
@@ -119,9 +122,6 @@ select {
   appearance: textfield;
   width: calc(100% - 40px); /* Ajuste para levar em conta o espaço dos botões */
   text-align: center;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
 }
 
 .arrow-buttons {
@@ -131,20 +131,22 @@ select {
   transform: translateY(-50%); /* Alinhar verticalmente ao centro */
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
 }
 
 .arrow-buttons button {
   width: 20px; /* ajuste conforme necessário */
   height: 20px; /* ajuste conforme necessário */
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  border-radius: 5px;
+  padding: 0;
+  border: none;
   background-color: transparent;
   cursor: pointer;
   font-size: 14px; /* ajuste conforme necessário */
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.arrow-buttons button:hover {
+  background-color: #3e8e41;
 }
 
 footer {
@@ -173,16 +175,16 @@ footer p {
 }
 
 .parallel-question {
-  width: 48%; /* Ajuste conforme necessário para o espaçamento */
+  width: 48%;
 }
 .question {
-  margin-bottom: 45px; /* Ajuste conforme necessário para o espaçamento desejado */
+  margin-bottom: 45px;
 }
 .input-container {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Adicionado para alinhar verticalmente os botões */
+  align-items: center;
 }
 
 .backward-button {
@@ -194,6 +196,7 @@ footer p {
   width: 100%;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .backward-button:hover {
@@ -207,16 +210,6 @@ footer p {
 .backward-button:active {
   background-color: #641b1b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.foward-button {
-  color: #fff;
-  padding: 13px;
-  border: 0;
-  border-radius: 4px;
-  width: calc(50% - 5px);
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .btn2 {
@@ -240,7 +233,6 @@ footer p {
 
 .btn2:active {
   background-color: #3e8e41;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logout {

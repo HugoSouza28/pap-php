@@ -29,9 +29,10 @@ if (isset($_POST['logout'])) {
 <head>
   <meta charset="UTF-8">
   <title>TaxiRide</title>
-  <link href="../css/taxibook2.css" rel="stylesheet" media="screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/reserva2.css" rel="stylesheet" media="screen">
 </head>
-<body onload="setTMR()">
+<body onload="tmr()">
   <header>
     <div class="container">
       <div class="logo">
@@ -47,7 +48,7 @@ if (isset($_POST['logout'])) {
   </header>
 
   <div class="container" id="passengerInfoContainer">
-    <form class="form-signin" method="post" action="" onsubmit="submitForm()">
+    <form class="form-signin" method="post" action="" onsubmit="submit()">
       <h2>Informações do passageiro</h2>
       <div class="question">
         <div class="parallel-questions">
@@ -56,14 +57,14 @@ if (isset($_POST['logout'])) {
             <div class="numeric-input">
               <input type="number" id="people" name="people" min="1" max="8" required>
               <div class="arrow-buttons">
-                <button type="button" class="arrow-up" onclick="increaseValue('people')">▲</button>
-                <button type="button" class="arrow-down" onclick="decreaseValue('people')">▼</button>
+                <button type="button" class="arrow-up" onclick="aumentar('people')">▲</button>
+                <button type="button" class="arrow-down" onclick="diminuir('people')">▼</button>
               </div>
             </div>
           </div>
           <div class="parallel-question">
             <label for="tmr">É necessário TMR (Transporte de Mobilidade Reduzida)?</label>
-            <select id="tmr" name="tmr" required onchange="setTMR()">
+            <select id="tmr" name="tmr" required onchange="tmr()">
               <option value="" disabled selected hidden>Selecione...</option>
               <option value="1">Sim</option>
               <option value="0">Não</option>
@@ -75,7 +76,7 @@ if (isset($_POST['logout'])) {
         <div class="parallel-questions">
           <div class="parallel-question">
             <label for="luggage">Vai trazer bagagem?</label>
-            <select id="luggage" name="luggage" required onchange="toggleMalaQuestion()">
+            <select id="luggage" name="luggage" required onchange="bagagem()">
               <option value="" disabled selected hidden>Selecione...</option>
               <option value="sim">Sim</option>
               <option value="nao">Não</option>
@@ -87,8 +88,8 @@ if (isset($_POST['logout'])) {
               <div class="numeric-input">
                 <input type="number" id="luggagenumber" name="luggagenumber" min="1" max="4" default="0"required>
                 <div class="arrow-buttons">
-                  <button type="button" class="arrow-up" onclick="increaseValue('luggagenumber')">▲</button>
-                  <button type="button" class="arrow-down" onclick="decreaseValue('luggagenumber')">▼</button>
+                  <button type="button" class="arrow-up" onclick="aumentar('luggagenumber')">▲</button>
+                  <button type="button" class="arrow-down" onclick="diminuir('luggagenumber')">▼</button>
                 </div>
               </div>
             </div>
@@ -113,7 +114,7 @@ if (isset($_POST['logout'])) {
   </footer>
 
 <script>
-  function toggleMalaQuestion() {
+  function bagagem() {
     var luggageSelect = document.getElementById("luggage");
     var malaQuestion = document.getElementById("malaQuestion");
     var malaInput = document.getElementById("luggagenumber");
@@ -126,7 +127,7 @@ if (isset($_POST['logout'])) {
     }
   }
 
-  function increaseValue(id) {
+  function aumentar(id) {
     var input = document.getElementById(id);
     var value = parseInt(input.value, 10);
     value = isNaN(value) ? 0 : value;
@@ -134,7 +135,7 @@ if (isset($_POST['logout'])) {
     input.value = value > parseInt(input.getAttribute('max')) ? input.getAttribute('max') : value;
   }
 
-  function decreaseValue(id) {
+  function diminuir(id) {
     var input = document.getElementById(id);
     var value = parseInt(input.value, 10);
     value = isNaN(value) ? 0 : value;
@@ -142,13 +143,13 @@ if (isset($_POST['logout'])) {
     input.value = value < parseInt(input.getAttribute('min')) ? input.getAttribute('min') : value;
   }
 
-  function setTMR() {
+  function tmr() {
     var tmrSelect = document.getElementById("tmr");
     var tmrValue = tmrSelect.value;
     document.getElementById("tmr_input").value = tmrValue;
   }
 
-  function submitForm() {
+  function submit() {
     var luggageSelect = document.getElementById("luggage");
     var luggageNumberInput = document.getElementById("luggagenumber");
 

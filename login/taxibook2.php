@@ -3,20 +3,10 @@ session_start();
 if (!isset($_SESSION['id'])) {
 	header("location: main_login.php");
 }
-$bdlocalhost='localhost';
-$bdusername='root';
-$bdpassword='';
-$bdbasedados='paphugo';
-
-$conn = mysqli_connect($bdlocalhost, $bdusername, $bdpassword, $bdbasedados);
 if (isset($_POST['submit'])) {
-  $idreserva = $_SESSION['idreserva'];
-  $pessoas = $_POST['people'];
-  $bagagem = $_POST['luggagenumber'];
-  $tmr = isset($_POST['tmr']) ? $_POST['tmr'] : 0;
-  $sql = "UPDATE reserva SET pessoas = $pessoas, bagagem = $bagagem, tmr = $tmr WHERE id = '$idreserva'";
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
+  $_SESSION['pessoas'] = $_POST['people'];
+  $_SESSION['bagagem'] = $_POST['luggagenumber'];
+  $_SESSION['tmr'] = isset($_POST['tmr']) ? $_POST['tmr'] : 0;
   header("location: taxibook3.php");
 }
 if (isset($_POST['logout'])) {
@@ -43,6 +33,7 @@ if (isset($_POST['logout'])) {
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
+        <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
       </nav>
     </div>
   </header>

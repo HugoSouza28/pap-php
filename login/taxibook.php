@@ -3,22 +3,13 @@ session_start();
 if (!isset($_SESSION['id'])) {
 	header("location: main_login.php");
 }
-$bdlocalhost='localhost';
-$bdusername='root';
-$bdpassword='';
-$bdbasedados='paphugo';
-
-$conn = mysqli_connect($bdlocalhost, $bdusername, $bdpassword, $bdbasedados);
 $erro="";
 if (isset($_POST['submit'])) {
   $idreserva = uniqid(rand(), false);
   $data = $_POST['datetimepicker'];
   if ($data != "") {
     $data .= ":00";
-    $sql = "INSERT INTO reserva (id, dataehora, members_id) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $idreserva, $data, $_SESSION['id']);
-    $stmt->execute();
+    $_SESSION['dataehora'] = $data;
     $_SESSION['idreserva'] = $idreserva;
     header("location: taxibook2.php");
   } else {
@@ -51,6 +42,7 @@ if (isset($_POST['logout'])) {
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
+        <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
       </nav>
     </div>
   </header>

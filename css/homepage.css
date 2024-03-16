@@ -141,7 +141,26 @@ header nav a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000000bd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2bd;
+}
+.container {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: center;
+}
 
   
   footer {

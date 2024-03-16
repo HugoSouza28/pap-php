@@ -9,16 +9,17 @@ $bdpassword='';
 $bdbasedados='paphugo';
 
 $erro="";
-$idreserva = $_SESSION['id'];
 $conn = mysqli_connect($bdlocalhost, $bdusername, $bdpassword, $bdbasedados);
 if (isset($_POST['submit'])) {
-  $recolha = $_POST['recolha'];
-  $destino = $_POST['destino'];
-  if (strlen($recolha) >= 20 && preg_match("/\b\d{4}-\d{3}\b/", $recolha)) {
-    if (strlen($destino) >= 20 && preg_match("/\b\d{4}-\d{3}\b/", $destino)) {
-      $sql = "UPDATE reserva SET recolha = '$recolha', destino = '$destino' WHERE id = $idreserva";
+  $_SESSION['recolha'] = $_POST['recolha'];
+  $_SESSION['destino'] = $_POST['destino'];
+  if (strlen($_SESSION['recolha']) >= 20 && preg_match("/\b\d{4}-\d{3}\b/", $_SESSION['recolha'])) {
+    if (strlen($_SESSION['destino']) >= 20 && preg_match("/\b\d{4}-\d{3}\b/", $_SESSION['destino'])) {
+      $sql = "INSERT INTO reserva (id, dataehora, pessoas, bagagem, tmr, recolha, destino, members_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
       $stmt = $conn->prepare($sql);
+      $stmt->bind_param("ssiissss",  $_SESSION['idreserva'], $_SESSION['dataehora'], $_SESSION['pessoas'], $_SESSION['bagagem'], $_SESSION['tmr'], $_SESSION['recolha'], $_SESSION['destino'],  $_SESSION['id']);
       $stmt->execute();
+      header("location: reservas.php");
     }
     else {
       $erro="2";
@@ -37,12 +38,12 @@ if (isset($_POST['logout'])) {
 <head>
   <meta charset="UTF-8">
   <title>TaxiRide</title>
-  <link href="../css/taxibook3.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="../css/registo.css" rel="stylesheet" media="screen">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container2">
       <div class="logo">
         <img src="images/taxi-icon.png" alt="Taxi Icon">
         <h1>TaxiRide</h1>
@@ -51,6 +52,7 @@ if (isset($_POST['logout'])) {
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
         <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
+        <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
       </nav>
     </div>
   </header>

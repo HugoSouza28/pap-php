@@ -1,9 +1,9 @@
 <?php
-include('dbinfo.php');
 session_start();
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['id'])){
   header("location: inicio.php");
   }
+include('dbinfo.php');
 $erro='';
 if (isset($_POST['submit'])) {
 	$email=$_POST['email'];

@@ -109,7 +109,9 @@ select {
 .numeric-input input[type="number"]::-webkit-inner-spin-button,
 .numeric-input input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
 }
 
 .numeric-input input[type="number"] {
@@ -117,6 +119,9 @@ select {
   appearance: textfield;
   width: calc(100% - 40px); /* Ajuste para levar em conta o espaço dos botões */
   text-align: center;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
 }
 
 .arrow-buttons {
@@ -126,31 +131,20 @@ select {
   transform: translateY(-50%); /* Alinhar verticalmente ao centro */
   display: flex;
   flex-direction: column;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
 }
 
 .arrow-buttons button {
   width: 20px; /* ajuste conforme necessário */
   height: 20px; /* ajuste conforme necessário */
-  padding: 0;
-  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
   font-size: 14px; /* ajuste conforme necessário */
-}
-
-
-button:hover {
-  background-color: #3e8e41;
-  color: #ffffff;
-}
-
-button:focus {
-  outline: 0;
-}
-
-button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -192,27 +186,26 @@ footer p {
 }
 
 .backward-button {
-  background-color: #ea1010;
+  background-color: #a52e2e;
   color: #fff;
-  padding: 13px;
+  padding: 8px;
   border: 0;
   border-radius: 4px;
-  width: calc(40% - 5px); /* Dividir o espaço igualmente entre os botões */
+  width: 100%;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.backward-button:hover{
-  background-color: #c71111;
+.backward-button:hover {
+  background-color: #641b1b;
 }
 
-.backward-button:focus
-{
+.backward-button:focus {
   outline: 0;
 }
 
-.backward-button:active{
-  background-color: #c71111;
+.backward-button:active {
+  background-color: #641b1b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -247,5 +240,32 @@ footer p {
 
 .btn2:active {
   background-color: #3e8e41;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout {
+  position: fixed;
+  bottom: 45px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #a52e2e;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  width: 10%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout:hover {
+  background-color: #641b1b;
+}
+
+.logout:focus {
+  outline: 0;
+}
+
+.logout:active {
+  background-color: #641b1b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

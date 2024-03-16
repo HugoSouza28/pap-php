@@ -1,15 +1,8 @@
 <?php
 session_start();
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['logado'])) {
-    header('Location: main_login.php');
-    exit;
-}
-
-// Verifica se o email do usuário é o correto
 if ($_SESSION['email'] !== 'taxiride.login@gmail.com') {
-    header('Location: index.php');
+    header('Location: inicio.php');
     exit;
 }
 ?>
@@ -23,7 +16,6 @@ if ($_SESSION['email'] !== 'taxiride.login@gmail.com') {
 </head>
 <body>
     <h1>Painel de Administrador</h1>
-    <p>Bem-vindo, <?php echo $_SESSION['nome']; ?>!</p>
-    <a href="logout.php">Sair</a>
+    <p>Bem-vindo, <?php echo $_SESSION['username']; ?>!</p>
 </body>
 </html>

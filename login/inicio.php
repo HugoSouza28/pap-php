@@ -1,19 +1,28 @@
 <?php
+session_start();
+if (!isset($_SESSION['id'])) {
+	header("location: main_login.php");
+}
+if (isset($_POST['logout'])) {
+  session_unset();
+  session_destroy();
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Registo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/homepage.css" rel="stylesheet" media="screen">
-  </head>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TaxiRide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/homepage.css" rel="stylesheet" media="screen">
+</head>
+<body>
   <header>
     <div class="container2">
       <div class="logo">
         <img src="images/taxi-icon.png" alt="Taxi Icon">
-        <h1><b>TaxiRide</b></h1>
+        <h1>TaxiRide</h1>
       </div>
       <nav>
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
@@ -33,8 +42,12 @@
       </div>
     </div>
   </main>
+  <form action="" method="post">
+    <button id="logout" class="logout" name="logout">Terminar sessão</button>
+  </form>
   <footer>
     <p>Copyright © 2024 TaxiRide</p>
   </footer>
+
 </body>
 </html>

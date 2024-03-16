@@ -1,5 +1,6 @@
 <?php
-if(isset($_SESSION['username'])){
+session_start();
+if(isset($_SESSION['id'])){
   header("location: inicio.php");
   }
 ?>

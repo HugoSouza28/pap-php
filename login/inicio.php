@@ -21,12 +21,10 @@ if (isset($_POST['logout'])) {
   <header>
     <div class="container2">
       <div class="logo">
-        <img src="images/taxi-icon.png" alt="Taxi Icon">
-        <h1>TaxiRide</h1>
+        <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
-        <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
         <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
       </nav>
@@ -36,13 +34,14 @@ if (isset($_POST['logout'])) {
   <main>
     <div class="container">
       <div class="welcome">
-        <h2>Bem Vindo <?php echo $_SESSION['username']; ?> !</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        <h2>Bem Vindo</h2>
+        <p>O TaxiRide é uma plataforma de reservas de táxis online, dedicada a simplificar a forma como os viajantes se deslocam em Portugal. Com uma dedicada rede de motoristas profissionais, estamos comprometidos em oferecer conveniência, segurança e eficiência em todas as suas viagens de táxi.</p>
+        <p>Com o TaxiRide, reservar um táxi é fácil e rápido. A nossa plataforma é intuitiva e permite que você reserve um táxi em poucos cliques. Basta inserir os detalhes da sua viagem e nós cuidaremos do resto, conectando-o com um motorista qualificado e confiável.</p>
+        <p>Junte-se à comunidade de viajantes inteligentes e escolha o TaxiRide para todas as suas necessidades de transporte em Portugal. Estamos aqui para tornar suas viagens mais simples, seguras e agradáveis.</p>
       </div>
     </div>
   </main>
+
   <form action="" method="post">
     <button id="logout" class="logout" name="logout">Terminar sessão</button>
   </form>

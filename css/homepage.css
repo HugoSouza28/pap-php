@@ -87,20 +87,23 @@ header nav a:hover {
   }
   
   main .welcome {
-    flex-basis: 40%;
+    flex-basis: 100%;
     margin-right: 5%;
   }
   
   main .welcome h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     color: #333;
+    text-align: left;
   }
   
   main .welcome p {
     color: #666;
     line-height: 1.5;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
+    text-align: left;
   }
   
   main .text-container {
@@ -182,3 +185,23 @@ th {
     margin: 0;
     font-size: 0.8rem;
   }
+
+.sobrenos {
+    flex-basis: 100%;
+    margin-right: 5%;
+  }
+.sobrenos p{
+  color: #666;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.container3 {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: center;
+}

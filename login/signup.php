@@ -18,12 +18,10 @@ if(isset($_SESSION['id'])){
   <header>
     <div class="container2">
       <div class="logo">
-        <img src="images/taxi-icon.png" alt="Taxi Icon">
         <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
         <a href="/pap/php-login-master/login/index.php">Inicio</a>
-        <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
         <a href="/pap/php-login-master/login/signup.php">Registar</a>
       </nav>

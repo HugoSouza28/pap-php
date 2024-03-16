@@ -23,12 +23,10 @@ if (isset($_POST['logout'])) {
   <header>
     <div class="container2">
       <div class="logo">
-        <img src="images/taxi-icon.png" alt="Taxi Icon">
-        <h1>TaxiRide</h1>
+        <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
         <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
-        <a href="#">Sobre Nós</a>
         <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
         <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
       </nav>

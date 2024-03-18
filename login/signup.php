@@ -48,7 +48,7 @@ if(isset($_SESSION['id'])){
           <button name="Submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Registar</button>
         </div>
         <div class="input-container2">
-                <p>Já tem conta? <a href="/pap/php-login-master/login/main_login.php">Login</a></p>
+                <p>Já tem conta? <a href="../login/main_login.php">Login</a></p>
         </div>
         <div class="input-container2" id="message"></div>
       </form>

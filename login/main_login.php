@@ -75,16 +75,19 @@ if (isset($_POST['submit'])) {
           <button name="submit" id="submit" class="btn2 btn-lg btn-primary btn-block" type="submit">Entrar</button>
         </div>
         <div class="input-container2">
-          <p>Ainda não tem conta? <a href="/pap/php-login-master/login/signup.php">Registar</a></p>
+          <p>Ainda não tem conta? <a href="../login/signup.php">Registar</a></p>
         </div>
         <div class="input-container2">
         <?php 
 				  if ($erro=="1")  {
-              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não encontrado.</div><div id="returnVal" style="display:none;">false</div>';
+              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não encontrado.</div>
+              <div id="returnVal" style="display:none;">false</div>';
           } elseif ($erro=="2")  {
-					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não verificado.</div><div id="returnVal" style="display:none;">false</div>';
+					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não verificado.</div>
+              <div id="returnVal" style="display:none;">false</div>';
 			    } elseif ($erro=="3")  {
-					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password incorreta.</div><div id="returnVal" style="display:none;">false</div>';
+					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password incorreta.</div>
+              <div id="returnVal" style="display:none;">false</div>';
 			      }
 			  ?>
         </div>

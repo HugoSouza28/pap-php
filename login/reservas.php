@@ -26,9 +26,9 @@ if (isset($_POST['logout'])) {
         <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/inicio.php">Inicio</a>
-        <a href="/pap/php-login-master/login/taxibook.php">Reservar TAXI</a>
-        <a href="/pap/php-login-master/login/reservas.php">As suas reservas</a>
+        <a href="../login/inicio.php">Inicio</a>
+        <a href="../login/taxibook.php">Reservar TAXI</a>
+        <a href="../login/reservas.php">As suas reservas</a>
       </nav>
     </div>
   </header>

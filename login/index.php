@@ -18,9 +18,9 @@ if(isset($_SESSION['id'])){
         <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
+        <a href="../login/index.php">Inicio</a>
+        <a href="../login/main_login.php">Entrar</a>
+        <a href="../login/signup.php">Registar</a>
       </nav>
     </div>
   </header>
@@ -32,6 +32,7 @@ if(isset($_SESSION['id'])){
         <p>O TaxiRide é uma plataforma de reservas de táxis online, dedicada a simplificar a forma como os viajantes se deslocam em Portugal. Com uma dedicada rede de motoristas profissionais, estamos comprometidos em oferecer conveniência, segurança e eficiência em todas as suas viagens de táxi.</p>
         <p>Com o TaxiRide, reservar um táxi é fácil e rápido. A nossa plataforma é intuitiva e permite que você reserve um táxi em poucos cliques. Basta inserir os detalhes da sua viagem e nós cuidaremos do resto, conectando-o com um motorista qualificado e confiável.</p>
         <p>Junte-se à comunidade de viajantes inteligentes e escolha o TaxiRide para todas as suas necessidades de transporte em Portugal. Estamos aqui para tornar suas viagens mais simples, seguras e agradáveis.</p>
+        <p>Em caso de dúvidas sobre as reservas ou a sua conta contactar via email : <b>taxiride.login@gmail.com</b></p>
       </div>
     </div>
   </main>

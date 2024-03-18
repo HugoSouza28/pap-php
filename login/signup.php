@@ -21,9 +21,9 @@ if(isset($_SESSION['id'])){
         <h1><b>TaxiRide</b></h1>
       </div>
       <nav>
-        <a href="/pap/php-login-master/login/index.php">Inicio</a>
-        <a href="/pap/php-login-master/login/main_login.php">Entrar</a>
-        <a href="/pap/php-login-master/login/signup.php">Registar</a>
+        <a href="../login/index.php">Inicio</a>
+        <a href="../login/main_login.php">Entrar</a>
+        <a href="../login/signup.php">Registar</a>
       </nav>
     </div>
   </header>

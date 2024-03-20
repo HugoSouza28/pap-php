@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION['id'])) {
 	header("location: main_login.php");
 }
+
 include('dbinfo.php');
 $id = $_SESSION['id'];
 $resultado = QueryDB("select * from reserva where members_id = '$id'");

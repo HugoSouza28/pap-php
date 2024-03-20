@@ -3,12 +3,14 @@ session_start();
 if (!isset($_SESSION['id'])) {
 	header("location: main_login.php");
 }
+
 if (isset($_POST['submit'])) {
   $_SESSION['pessoas'] = $_POST['people'];
   $_SESSION['bagagem'] = $_POST['luggagenumber'];
   $_SESSION['tmr'] = isset($_POST['tmr']) ? $_POST['tmr'] : 0;
   header("location: taxibook3.php");
 }
+
 if (isset($_POST['logout'])) {
   session_unset();
   session_destroy();

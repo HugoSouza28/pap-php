@@ -30,7 +30,7 @@ if(isset($_POST['verificarmembro'])){
     $sql = "UPDATE members SET verified = '1' WHERE id = '$memberId'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    header('Location: admin.php#usuariosvalidos');
+    header('Location: admin.php#utilizadoresvalidos');
 }
 
 if(isset($_POST['verificarreserva'])){
@@ -40,7 +40,7 @@ if(isset($_POST['verificarreserva'])){
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     header('Location: admin.php#reservasvalidas');
-    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,13 +59,13 @@ if(isset($_POST['verificarreserva'])){
     <nav>
         <a href="#condutores">Condutores</a>
         <a href="#taxis">Táxis</a>
-        <a href="#usuariosinvalidos">Usuários por validar</a>
-        <a href="#usuariosvalidos">Usuários validados</a>
+        <a href="#utilizadoresinvalidos">Utilizadores por validar</a>
+        <a href="#utilizadoresvalidos">Utilizadores validados</a>
         <a href="#reservasinvalidas">Reservas por validar</a>
         <a href="#reservasvalidas">Reservas validadas</a>
     </nav>
 
-    <div class="container">
+  <div class="container">
     <section id="condutores">
         <h2>Condutores</h2>
         <table>
@@ -120,8 +120,8 @@ if(isset($_POST['verificarreserva'])){
         </table>
     </section>
 
-    <section id="usuariosinvalidos">
-        <h2>Usuários por validar</h2>
+    <section id="utilizadoresinvalidos">
+        <h2>Utilizadores por validar</h2>
         <table>
             <thead>
                 <tr>
@@ -155,8 +155,8 @@ if(isset($_POST['verificarreserva'])){
         </table>
     </section>
 
-    <section id="usuariosvalidos">
-        <h2>Usuários Válidos</h2>
+    <section id="utilizadoresvalidos">
+        <h2>Utilizadores Válidos</h2>
         <table>
             <thead>
                 <tr>
@@ -165,7 +165,6 @@ if(isset($_POST['verificarreserva'])){
                     <th>Email</th>
                     <th>Verificação</th>
                     <th>Data do registo</th>
-                    <th>Verificar</th>
                 </tr>
             </thead>
             <tbody>
@@ -189,6 +188,7 @@ if(isset($_POST['verificarreserva'])){
         <table>
             <thead>
                 <tr>
+                <th>ID</th>
                 <th>Data</th>
                 <th>Pessoas</th>
                 <th>Bagagens</th>
@@ -196,12 +196,14 @@ if(isset($_POST['verificarreserva'])){
                 <th>Recolha</th>
                 <th>Destino</th>
                 <th>Confirmação</th>
+                <th>Confirmar</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     while ($rowreservasinvalidas = mysqli_fetch_assoc($reservasinvalidas)) {
                         echo "<tr>";
+                        echo "<td>".$rowreservasinvalidas['id']."</td>";
                         echo "<td>".$rowreservasinvalidas['dataehora']."</td>";
                         echo "<td>".$rowreservasinvalidas['pessoas']."</td>";
                         echo "<td>".$rowreservasinvalidas['bagagem']."</td>";
@@ -221,11 +223,13 @@ if(isset($_POST['verificarreserva'])){
             </tbody>
     </table>
     </section>
+
     <section id="reservasvalidas">
         <h2>Reservas Válidas</h2>
         <table>
             <thead>
                 <tr>
+                <th>ID</th>
                 <th>Data</th>
                 <th>Pessoas</th>
                 <th>Bagagens</th>
@@ -239,6 +243,7 @@ if(isset($_POST['verificarreserva'])){
                 <?php
                     while ($rowreservasvalidas = mysqli_fetch_assoc($reservasvalidas)) {
                         echo "<tr>";
+                        echo "<td>".$rowreservasvalidas['id']."</td>";
                         echo "<td>".$rowreservasvalidas['dataehora']."</td>";
                         echo "<td>".$rowreservasvalidas['pessoas']."</td>";
                         echo "<td>".$rowreservasvalidas['bagagem']."</td>";
@@ -252,7 +257,8 @@ if(isset($_POST['verificarreserva'])){
             </tbody>
     </table>
     </section>
-    </div>
+
+  </div>
     <div class="espaçamento"></div>
 
     <form action="" method="post">

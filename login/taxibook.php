@@ -62,8 +62,6 @@ if (isset($_POST['logout'])) {
         <?php 
 				  if ($erro =="1")  {
 					  echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Selecione uma data.</div><div id="returnVal" style="display:none;">false</div>';
-			    } elseif ($erro=="2")  {
-					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Ocorreu um erro a selecionar a data, selecione novamente.</div><div id="returnVal" style="display:none;">false</div>';
 			    }
 			  ?>
         </div>
@@ -71,6 +69,7 @@ if (isset($_POST['logout'])) {
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
     var today = new Date();

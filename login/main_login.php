@@ -3,7 +3,9 @@ session_start();
 if(isset($_SESSION['id'])){
   header("location: inicio.php");
   }
+  
 include('dbinfo.php');
+
 $erro='';
 if (isset($_POST['submit'])) {
 	$email=$_POST['email'];
@@ -80,14 +82,11 @@ if (isset($_POST['submit'])) {
         <div class="input-container2">
         <?php 
 				  if ($erro=="1")  {
-              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não encontrado.</div>
-              <div id="returnVal" style="display:none;">false</div>';
+              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não encontrado.</div><div id="returnVal" style="display:none;">false</div>';
           } elseif ($erro=="2")  {
-					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não verificado.</div>
-              <div id="returnVal" style="display:none;">false</div>';
+					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Utilizador não verificado.</div><div id="returnVal" style="display:none;">false</div>';
 			    } elseif ($erro=="3")  {
-					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password incorreta.</div>
-              <div id="returnVal" style="display:none;">false</div>';
+					    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password incorreta.</div><div id="returnVal" style="display:none;">false</div>';
 			      }
 			  ?>
         </div>

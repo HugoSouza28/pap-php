@@ -17,7 +17,8 @@ if (isset($_POST['submit'])) {
     if (strlen($_SESSION['destino']) >= 20 && preg_match("/\b\d{4}-\d{3}\b/", $_SESSION['destino'])) {
       $sql = "INSERT INTO reserva (id, dataehora, pessoas, bagagem, tmr, recolha, destino, members_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
       $stmt = $conn->prepare($sql);
-      $stmt->bind_param("ssiissss",  $_SESSION['idreserva'], $_SESSION['dataehora'], $_SESSION['pessoas'], $_SESSION['bagagem'], $_SESSION['tmr'], $_SESSION['recolha'], $_SESSION['destino'],  $_SESSION['id']);
+      $stmt->bind_param("ssiissss",  $_SESSION['idreserva'], $_SESSION['dataehora'], $_SESSION['pessoas'], $_SESSION['bagagem'], 
+      $_SESSION['tmr'], $_SESSION['recolha'], $_SESSION['destino'],  $_SESSION['id']);
       $stmt->execute();
       header("location: reservas.php");
     }
@@ -28,6 +29,7 @@ if (isset($_POST['submit'])) {
     $erro="1";
   }
 }
+
 if (isset($_POST['logout'])) {
   session_unset();
   session_destroy();
